@@ -49,7 +49,7 @@ app.get("/", function (req, res) {
       INFO: process.env.INFO ? process.env.INFO : "",
       favicon: process.env.FAVICON
         ? process.env.FAVICON
-        : "https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v3.2.3/butterfly/img/favicon.ico",
+        : "http://i.mooc.chaoxing.com/It's in the app by default/favicon.ico",
     });
   }
 });
