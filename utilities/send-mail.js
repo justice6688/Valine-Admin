@@ -159,7 +159,7 @@ exports.notice = (comment) => {
 链接：${url + "#" + comment.get("objectId")}`;
     axios
       .get(
-        `https://qmsg.zendee.cn:443/send/${process.env.QMSG_KEY
+        `https://qmsg.zendee.cn/${process.env.QMSG_KEY //https://qmsg.zendee.cn:443/send
         }?msg=${encodeURIComponent(scContent)}` + qq
       )
       .then(function (response) {
