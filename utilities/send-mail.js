@@ -125,23 +125,23 @@ exports.notice = (comment) => {
   }
   // QQ提醒
   if (process.env.QMSG_KEY != null) {
-    // if (process.env.QQ_SHAKE != null) {
-    //   axios
-    //     .get(
-    //       `https://qmsg.zendee.cn:443/send/${process.env.QMSG_KEY
-    //       }?msg=${encodeURIComponent("[CQ:shake]")}`
-    //     )
-    //     .then(function (response) {
-    //       if (response.status === 200 && response.data.success === true) {
-    //         console.log("已发送QQ戳一戳");
-    //       } else {
-    //         console.error("发送QQ戳一戳失败:", response.data);
-    //       }
-    //     })
-    //     .catch(function (error) {
-    //       console.error("发送QQ戳一戳失败:", error.message);
-    //     });
-    // }
+    if (process.env.QQ_SHAKE != null) {
+      axios
+        .get(
+          `https://qmsg.zendee.cn/send/${process.env.QMSG_KEY //https://qmsg.zendee.cn:443/send
+          }?msg=${encodeURIComponent("[CQ:shake]")}`
+        )
+        .then(function (response) {
+          if (response.status === 200 && response.data.success === true) {
+            console.log("已发送QQ戳一戳");
+          } else {
+            console.error("发送QQ戳一戳失败:", response.data);
+          }
+        })
+        .catch(function (error) {
+          console.error("发送QQ戳一戳失败:", error.message);
+        });
+    }
     let qq = "";
     if (process.env.QQ != null) {
       qq = "&qq=" + process.env.QQ;
@@ -159,7 +159,7 @@ exports.notice = (comment) => {
 链接：${url + "#" + comment.get("objectId")}`;
     axios
       .get(
-        `https://qmsg.zendee.cn:443/send/${process.env.QMSG_KEY
+        `https://qmsg.zendee.cn/send/${process.env.QMSG_KEY //https://qmsg.zendee.cn:443/send
         }?msg=${encodeURIComponent(scContent)}` + qq
       )
       .then(function (response) {
