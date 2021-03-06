@@ -49,7 +49,7 @@ app.get("/", function (req, res) {
       INFO: process.env.INFO ? process.env.INFO : "",
       favicon: process.env.FAVICON
         ? process.env.FAVICON
-        : "http://i.mooc.chaoxing.com/It's in the app by default/favicon.ico",
+        : "http://common.cnblogs.com/favicon.ico",
     });
   }
 });
