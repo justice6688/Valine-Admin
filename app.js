@@ -49,7 +49,7 @@ app.get("/", function (req, res) {
       INFO: process.env.INFO ? process.env.INFO : "",
       favicon: process.env.FAVICON
         ? process.env.FAVICON
-        : "http://common.cnblogs.com/favicon.ico",
+        : "https://common.cnblogs.com/favicon.ico",
     });
   }
 });
